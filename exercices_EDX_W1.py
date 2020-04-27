@@ -15,15 +15,13 @@ alphabet = string.ascii_letters
 sentence = 'Jim quickly realized that the beautiful gowns are expensive'
 
 count_letters = {}
-# write your code here!
 
-"""
 for i in range(len(sentence)):
     if sentence[i] in count_letters:
         count_letters[sentence[i]] += 1
     else:
         count_letters[sentence[i]] = 1
-"""
+
 
 def counter(input_string):
 
@@ -125,6 +123,8 @@ difference = (math.pi / 4) - (count_true / R)
 ##--------------------------------##
 # Exercice 3
 """
+Corection
+
 def moving_window_average(x, n_neighbors=1):
     n = len(x)
     width = n_neighbors*2 + 1
@@ -152,10 +152,10 @@ def moving_window_average(x, n_neighbors=1):
 
 
 x = [0,10,5,3,1,5]
-print(moving_window_average(x, 1))
-print(sum(moving_window_average(x, 1)))
+#print(moving_window_average(x, 1))
+#print(sum(moving_window_average(x, 1)))
 
-"""
+
 R = 1000
 Y = []
 x = []
@@ -170,10 +170,9 @@ for i in range(1, 10):
 for i in range(9):
     ranges.append(max(Y[i])-min(Y[i]))
 
-
 #print(Y[5][9])
 #print(ranges)
-"""
+
 
 
 

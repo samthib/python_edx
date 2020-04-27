@@ -45,7 +45,7 @@ def possibilities(board):
     
     return possible_tuple
 
-#possible = possibilities(board)
+possible = possibilities(board)
 #print(possible)
 
 # Exercice 4
@@ -137,7 +137,7 @@ def evaluate(board):
 
 
 # Exercice 10
-"""
+
 random.seed(1)
 
 def play_game():
@@ -161,15 +161,15 @@ result = []
 for i in range(1000):
     result.append(play_game());
 
-#print(result)  
-print(result.count(-1))
-print(result.count(1))
-print(result.count(2))
+
+#print(result.count(-1))
+#print(result.count(1))
+#print(result.count(2))
 
 import matplotlib.pyplot as plt
 
-plt.hist(result)
-"""
+#plt.hist(result)
+
 # Exercice 11
 
 random.seed(1)
@@ -203,8 +203,8 @@ for i in range(1000):
 #print(result.count(1))
 #print(result.count(2))
 
-import matplotlib.pyplot as plt
-plt.hist(result)
+
+#plt.hist(result)
 
 
 
