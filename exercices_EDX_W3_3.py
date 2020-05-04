@@ -85,7 +85,7 @@ np.random.seed(1) # do not change
 
 x = np.random.randint(0, 2, 1000)
 y = np.random.randint(0, 2, 1000)
-
+"""
 def accuracy(predictions, outcomes):
     n = len(predictions)
     k = len(outcomes)
@@ -93,8 +93,8 @@ def accuracy(predictions, outcomes):
         return "different array sizes"
 
     equal_count = 0
-    for i in range(n):
-        if predictions[i] == outcomes[i]:
+    for prediction, outcome in zip(predictions, outcomes):
+        if prediction == outcome:
             equal_count += 1
       
     ratio = 100 * equal_count / n 
@@ -103,6 +103,12 @@ def accuracy(predictions, outcomes):
 
 #print(accuracy(x, y))
     
+"""
+# CORRECTION DU COURS
+def accuracy(predictions, outcomes):
+    return 100*np.mean(predictions == outcomes)
+
+#print(accuracy(x, y))
 
 # Exercice 6
 
@@ -118,8 +124,7 @@ knn.fit(numeric_data, data['high_quality'])
 
 library_predictions = knn.predict(numeric_data)
 
-#print(accuracy(library_predictions, list(data['high_quality'])))
-    
+#print(accuracy(library_predictions, data["high_quality"]))
       
 # Exercice 8
 
@@ -132,22 +137,12 @@ selection = random.sample(range(n_rows), 10)
 
 
 # Exercice 9
-
 predictors = np.array(numeric_data)
 training_indices = [i for i in range(len(predictors)) if i not in selection]
 outcomes = np.array(data["high_quality"])
 
-my_predictions = []
-for p in predictors[selection]:
-    my_predictions.append(knn_predict(p, predictors[training_indices,:], outcomes, k=5))
-    
-#percentage = # Enter your code here!
+my_predictions = np.array([knn_predict(p, predictors[training_indices,:], outcomes[training_indices], k=5) for p in predictors[selection]])
+percentage = accuracy(my_predictions, data.high_quality.iloc[selection])
 
-print(my_predictions)
-#for select in data.high_quality[selection]
-print(selection)
-#for prediction in my_predictions:
- #   percentage = accuracy(my_predictions, data.high_quality[selection])
-    
-#print(percentage)
-#print(data.high_quality[selection])
+print(percentage)
+
